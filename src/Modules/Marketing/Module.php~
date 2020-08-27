@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Modules\Marketing
+
+class Module extends \Sintattica\Atk\Core\Module
+{
+    static $module = 'catalogo';
+
+    public function register()
+    {
+        $this->registerNode('catalogo', Catalogo::class, ['admin', 'add', 'edit', 'delete']);
+    }
+
+    public function boot()
+    {
+        $this->addNodeToMenu('marketing', 'catalogo', 'admin');
+    }
+}
+
